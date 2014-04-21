@@ -46,3 +46,6 @@ user-agents
 django-user-agents
 
 # end user-agent detection
+# javascript internacionalizations
+django-statici18n
+# end javascript internacionalizations
