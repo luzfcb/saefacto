@@ -51,12 +51,14 @@ class Common(Configuration):
         'sitetree',
         'sitetree_smartadmin',
         'django_user_agents',
+        'statici18n',  # javascript
     )
 
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
-        # Your stuff: custom apps go here
+        'core',
+        'main',
     )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -141,6 +143,11 @@ class Common(Configuration):
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#language-code
     LANGUAGE_CODE = 'pt-br'
+    LANGUAGES = (
+        ('pt-br', u'Português do Brasil'),
+        ('en', 'English'),
+        ('es', u'Español'),
+    )
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
     SITE_ID = 1
@@ -438,8 +445,14 @@ if 1 == 2:
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
+        'sitetree',
+        'sitetree_smartadmin',
+        'django_user_agents',
+        'statici18n',  # javascript
 
         'users',  # custom users app
+        'core',
+        'main',
 
         # Needs to come last for now because of a weird edge case between
         #   South and allauth
