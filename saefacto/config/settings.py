@@ -48,6 +48,9 @@ class Common(Configuration):
         'south',  # Database migration helpers:
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
+        'sitetree',
+        'sitetree_smartadmin',
+        'django_user_agents',
     )
 
     # Apps specific for this project go here.
@@ -76,6 +79,7 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django_user_agents.middleware.UserAgentMiddleware',
     )
     ########## END MIDDLEWARE CONFIGURATION
 
@@ -308,7 +312,8 @@ class Local(Common):
     ########## end django-debug-toolbar
 
     ########## Your local stuff: Below this line define 3rd party libary settings
-
+    #SITETREE_MODEL_TREE = 'sitetree_smartadmin.SmartTree'
+    SITETREE_MODEL_TREE_ITEM = 'sitetree_smartadmin.SmartTreeItem'
 
 class Production(Common):
 

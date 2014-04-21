@@ -35,3 +35,14 @@ django-avatar==2.0
 
 
 # Your custom requirements go here
+django-sitetree==1.0.0
+
+
+# user-agent detection
+#
+pyyaml
+ua-parser
+user-agents
+django-user-agents
+
+# end user-agent detection
