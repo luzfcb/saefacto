@@ -66,11 +66,11 @@
                     {% block content %}
 					<div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
                     {% block coluna_esquerda %}
-						<h1 class="txt-color-red login-header-big">SGT - Sistema de Gerênciamento de Transportes</h1>
+						<h1 class="txt-color-red login-header-big">SAE - Sistema de Acompanhamento de Estágio</h1>
 						<div class="hero">
 
 							<div class="pull-left login-desc-box-l">
-								<h4 class="paragraph-header">Secretaria de Estado da Administração<br/>Diretoria Geral de Transportes</h4>
+								<h4 class="paragraph-header">Faculdade Catolica do Tocantins</h4>
 
 {% comment %}								<div class="login-app-icons">
 									<a href="javascript:void(0);" class="btn btn-danger btn-sm">Frontend Template</a>
@@ -82,25 +82,34 @@
 
 						</div>
 
-{% comment %}						<div class="row">
-							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>
+					<div class="row">
+                    	   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h5 class="about-heading">Sobre SAEFACTO</h5>
 								<p>
-									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.
+									SAEFACTO é um exemplo de sistema desenvolvido pelos academicos e utilizado como requisito parcial para a diciplina de Interface Homem-Maquina
+                                    do curso de Sistemas de Informação da Faculdade Catolica do Tocantins.
+
+                                    SAEFACTO não é e não está de forma alguma vinculada a Faculdade Catolica do Tocantins.
 								</p>
 							</div>
-							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-								<h5 class="about-heading">Not just your average template!</h5>
-								<p>
-									Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!
-								</p>
-							</div>
-						</div>{% endcomment %}
+{#							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#								<h5 class="about-heading">About SmartAdmin - Are you up to date?</h5>#}
+{#								<p>#}
+{#									Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa.#}
+{#								</p>#}
+{#							</div>#}
+{#							<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">#}
+{#								<h5 class="about-heading">Not just your average template!</h5>#}
+{#								<p>#}
+{#									Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi voluptatem accusantium!#}
+{#								</p>#}
+{#							</div>#}
+						</div>
 
 					</div>
                     {% endblock coluna_esquerda %}
-					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
                     {% block coluna_direita %}
+					<div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
 						<div class="well no-padding">
                             {% block login_register_form_block %}
 							<form action="{% url "account_login" %}" id="login-form" class="smart-form client-form" method="post">
@@ -178,23 +187,8 @@
 							</form>
                         {% endblock login_register_form_block %}
 						</div>
-                        {% endblock coluna_direita %}
-
-{% comment %}						<h5 class="text-center"> - Or sign in using -</h5>
-
-                        <ul class="list-inline text-center">
-                            <li>
-                                <a href="javascript:void(0);" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="btn btn-info btn-circle"><i class="fa fa-twitter"></i></a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0);" class="btn btn-warning btn-circle"><i class="fa fa-linkedin"></i></a>
-                            </li>
-                        </ul>{% endcomment %}
-
 					</div>
+                    {% endblock coluna_direita %}
                 {% endblock content %}
 				</div>
 			</div>

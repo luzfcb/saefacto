@@ -1,1 +1,43 @@
-{% extends "base.html" %}
+{% extends "account/login.html" %}
+
+{% load url from future %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% trans "Signup" %}{% endblock title %}
+
+
+<h1>{% trans "Sign Up" %}</h1>
+
+<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+
+{% block login_register_button %}
+<div class="pull-right">
+
+</div>
+
+
+{% endblock login_register_button %}
+
+{% block coluna_direita %}
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+        <div>
+        <div>
+            <span>Já possui conta?</span>
+            <br/>
+            <br/>
+            <a href="{% url "account_login" %}" class="btn btn-danger">Faça Login</a>
+        </div>
+        <br/>
+
+        <div>
+            <span>ou</span>
+            <br/>
+            <br/>
+            <a href="{% url "account_signup" %}" class="btn btn-danger">Crie sua conta</a>
+        </div>
+        </div>
+    </div>
+{% endblock coluna_direita %}
+
+
