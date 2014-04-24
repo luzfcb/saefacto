@@ -52,6 +52,7 @@ class Common(Configuration):
         'sitetree_smartadmin',
         'django_user_agents',
         'statici18n',  # javascript
+        'django_extensions',
     )
 
     # Apps specific for this project go here.

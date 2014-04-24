@@ -49,3 +49,5 @@ django-user-agents
 # javascript internacionalizations
 django-statici18n
 # end javascript internacionalizations
+
+django-extensions
