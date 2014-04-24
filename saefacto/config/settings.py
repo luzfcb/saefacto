@@ -331,6 +331,19 @@ class Production(Common):
     INSTALLED_APPS += ('allauth.socialaccount.providers.facebook',
                        'allauth.socialaccount.providers.github', )
     ########## END INSTALLED_APPS
+    DEBUG = values.BooleanValue('DEBUG')
+    if DEBUG:
+        ########## django-debug-toolbar
+        MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+        INSTALLED_APPS += ('debug_toolbar',)
+
+        INTERNAL_IPS = ('127.0.0.1',)
+
+        DEBUG_TOOLBAR_CONFIG = {
+            'INTERCEPT_REDIRECTS': False,
+            'SHOW_TEMPLATE_CONTEXT': True,
+        }
+        ########## end django-debug-toolbar
 
     ########## SECRET KEY
     SECRET_KEY = values.SecretValue()
@@ -453,6 +466,7 @@ if 1 == 2:
         'sitetree_smartadmin',
         'django_user_agents',
         'statici18n',  # javascript
+        'django_extensions',
 
         'users',  # custom users app
         'core',
