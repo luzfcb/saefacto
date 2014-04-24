@@ -236,6 +236,7 @@ class Common(Configuration):
     ACCOUNT_AUTHENTICATION_METHOD = "username"
     ACCOUNT_EMAIL_REQUIRED = True
     ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+    ACCOUNT_LOGOUT_ON_GET = True
     ########## END AUTHENTICATION CONFIGURATION
 
     ########## Custom user app defaults
