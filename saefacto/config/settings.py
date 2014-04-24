@@ -331,7 +331,7 @@ class Production(Common):
     INSTALLED_APPS += ('allauth.socialaccount.providers.facebook',
                        'allauth.socialaccount.providers.github', )
     ########## END INSTALLED_APPS
-    DEBUG = values.BooleanValue(environ_name='DEBUG')
+    DEBUG = Common.DEBUG
     if DEBUG:
         ########## django-debug-toolbar
         MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
