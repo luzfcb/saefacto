@@ -52,7 +52,6 @@ class Common(Configuration):
         'sitetree_smartadmin',
         'django_user_agents',
         'statici18n',  # javascript
-        'django_extensions',
     )
 
     # Apps specific for this project go here.
@@ -237,7 +236,6 @@ class Common(Configuration):
     ACCOUNT_AUTHENTICATION_METHOD = "username"
     ACCOUNT_EMAIL_REQUIRED = True
     ACCOUNT_EMAIL_VERIFICATION = "mandatory"
-    ACCOUNT_LOGOUT_ON_GET = True
     ########## END AUTHENTICATION CONFIGURATION
 
     ########## Custom user app defaults
@@ -331,19 +329,6 @@ class Production(Common):
     INSTALLED_APPS += ('allauth.socialaccount.providers.facebook',
                        'allauth.socialaccount.providers.github', )
     ########## END INSTALLED_APPS
-    DEBUG = values.BooleanValue(True)
-
-    ########## django-debug-toolbar
-    MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
-    INSTALLED_APPS += ('debug_toolbar',)
-
-    INTERNAL_IPS = ('127.0.0.1',)
-
-    DEBUG_TOOLBAR_CONFIG = {
-        'DISABLE_PANELS': ['debug_toolbar.panels.redirects.RedirectsPanel'],
-        'SHOW_TEMPLATE_CONTEXT': True,
-    }
-    ########## end django-debug-toolbar
 
     ########## SECRET KEY
     SECRET_KEY = values.SecretValue()
@@ -418,12 +403,10 @@ class Production(Common):
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-dirs
     TEMPLATE_LOADERS = (
-        ('django.template.loaders.cached.Loader',
-         (
+        ('django.template.loaders.cached.Loader', (
             'django.template.loaders.filesystem.Loader',
             'django.template.loaders.app_directories.Loader',
-        )
-        ),
+        )),
     )
     ########## END TEMPLATE CONFIGURATION
 
@@ -438,6 +421,22 @@ class Production(Common):
     ########## END CACHING
 
     ########## Your production stuff: Below this line define 3rd party libary settings
+
+    ########## DEBUG
+    DEBUG = values.BooleanValue(True)
+    TEMPLATE_DEBUG = DEBUG
+    ########## END DEBUG
+    ########## django-debug-toolbar
+    MIDDLEWARE_CLASSES = Common.MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+    INSTALLED_APPS += ('debug_toolbar',)
+
+    INTERNAL_IPS = ('127.0.0.1',)
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'DISABLE_PANELS': ['debug_toolbar.panels.redirects.RedirectsPanel'],
+        'SHOW_TEMPLATE_CONTEXT': True,
+    }
+    ########## end django-debug-toolbar
 
 
 #######################################################################################
@@ -466,7 +465,6 @@ if 1 == 2:
         'sitetree_smartadmin',
         'django_user_agents',
         'statici18n',  # javascript
-        'django_extensions',
 
         'users',  # custom users app
         'core',

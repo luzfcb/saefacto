@@ -36,8 +36,3 @@ urlpatterns = patterns('',
 
 
 urlpatterns += staticfiles_urlpatterns()
-
-if settings.DEBUG:
-    urlpatterns += patterns('',                      # noqa
-                url(r'^__debug__/', include('debug_toolbar.urls'))
-    )
