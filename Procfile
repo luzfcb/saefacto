@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath="$PWD/saefacto" config.wsgi:application
+web: scripts/web
