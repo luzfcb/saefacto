@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT saefacto.config.wsgi:application
+web: gunicorn --pythonpath="$PWD/saefacto" config.wsgi:application
