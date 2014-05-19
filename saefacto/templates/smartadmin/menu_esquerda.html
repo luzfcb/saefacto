@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load sitetree %}
+{% load avatar_tags %}
 <!-- Note: This width of the aside area can be adjusted through LESS variables -->
 <aside id="left-panel">
 
@@ -10,7 +11,8 @@
             <span> <!-- User image size is adjusted inside CSS, it should stay as it -->
 
                 <a href="javascript:void(0);" id="show-shortcut">
-                    <img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online"/>
+{#                    <img src="{% static "smartadmin/img/avatars/sunny.png" %}" alt="me" class="online"/>#}
+                    <img src="{% avatar_url user %}" alt="me" class="online"/>
                     <span>
                         {{ user_display }}
                     </span>

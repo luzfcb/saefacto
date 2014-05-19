@@ -40,9 +40,10 @@ class Common(Configuration):
 
         # Useful template tags:
         # 'django.contrib.humanize',
-
+        # 'suit',
         # Admin
         'django.contrib.admin',
+        'django.contrib.admindocs',
     )
     THIRD_PARTY_APPS = (
         'south',  # Database migration helpers:
@@ -52,6 +53,8 @@ class Common(Configuration):
         'sitetree_smartadmin',
         'django_user_agents',
         'statici18n',  # javascript
+        'parsley',
+
     )
 
     # Apps specific for this project go here.
@@ -236,6 +239,7 @@ class Common(Configuration):
     ACCOUNT_AUTHENTICATION_METHOD = "username"
     ACCOUNT_EMAIL_REQUIRED = True
     ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+    ACCOUNT_PASSWORD_MIN_LENGTH = 1
     ########## END AUTHENTICATION CONFIGURATION
 
     ########## Custom user app defaults

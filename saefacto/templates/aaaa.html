@@ -1,0 +1,13 @@
+{% extends "smartadmin/blank_.html" %}
+{% load crispy_forms_filters %}
+
+
+{% block content %}
+
+<form class="form-horizontal" data-parsley-validate method="post">
+{% csrf_token %}
+{{ form|crispy }}
+<button name="formu">enviar</button>
+</form>
+
+{% endblock content %}
